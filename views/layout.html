@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8" />
+        {% block title %}
+            <title>Casa Criativa</title>
+        {% endblock %}  
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body id="{{ bodyId }}">
+        <!-- Aqui nós estamos chamando aquela variavel que nós criamos la no ideias.html -->
+
+        <h1>{{title}}</h1>
+
+        <div id="container">
+
+            {% block content %} 
+            {% endblock %}
+
+        </div>
+
+        {% include "modal.html" %} 
+
+        <script src="./scripts.js"></script>
+
+    </body>
+
+</html>

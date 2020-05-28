@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+<!-- Ele ta levando o block content e o set body id para o layout.html -->
+
+{% set bodyId = "page-ideias" %}
+<!-- Ele vai criar uma variavel page-ideias para não bagunçar no .css -->
+
+{% block content %}
+
+{% block title %}
+    <title>Ideias - Casa Criativa</title>
+{% endblock %}  <!-- Se ele chegou aqui e tem um block title ele vai substituir o que tem la no layout.html -->
+
+<header>
+    <a href="/">
+
+        <img src="./logo.png" alt="Imagem da Logomarca" />
+
+    </a>
+    <nav>   <!-- E a tag de menus (navigations) -->
+        <li><a href="/">Início</a></li>
+        <li><a href="#" onclick="onOff()" class="button">Nova Ideia</a></li>
+    </nav>
+</header>
+<section id="title">
+    <p>em exibição</p>
+    <h1>Ideias</h1>
+</section>
+<main>
+    <section id="ideias">
+        
+        {% include "all_ideias.html" %}
+
+    </section>
+</main>
+<footer>
+    Com ❤ <a target="_blank" href="https://rocketseat.com.br">Rocketseat</a>
+</footer>
+
+{% endblock %}
+

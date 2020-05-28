@@ -1,0 +1,449 @@
+/*
+    Tudo no css e BOX
+        -> Textos ou boxs ou imgs.
+
+    Margin: Espaçamentro,
+    Border: Borda,
+    Padding: Preechimento.
+
+
+    Largura,
+    Altura,
+    Conteudo da caixa.
+
+    Espaçamento,
+    Preenchimento,
+    Bordas
+
+    Posicionamentos
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap');
+
+/* Global */
+
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    background: #e5e5e5;
+    color: #252B2B;
+
+    font-family: 'Montserrat', sans-serif;
+
+    margin: 0;
+}
+
+body.hideScroll {
+    overflow: hidden;
+}
+
+a {
+    font-weight: bold;
+    color: #ff5E84;
+
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p, .description {
+    font-size: 16px;
+    line-height: 34px;
+    letter-spacing: 0.1px;
+}
+
+.button {
+    background: #ff5E84;
+
+    width: 150px;
+    height: 40px;
+
+    color: white;   
+    font-size: 14px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+
+    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
+
+    transition: all 200ms;
+}
+
+.button:hover {
+    background: #0984e3;
+    text-decoration: none;
+}
+
+/* Padrão */
+
+#container {
+    width: 90%;
+    max-width: 980px;
+
+    margin: 40px auto;
+
+    display: flex; /* Ele vai colocar os filhos em linha ( No caso os filhos são o section-intro e section-ideia, e o pai e o #container ) */
+
+
+}
+
+#intro {
+    width: 300px;
+
+    margin-right: 20px;
+}
+
+main {
+    margin: 32px 0;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+
+    margin-bottom: 32px;
+}
+
+button {
+    background: none;
+    color: #ff5E84;
+
+    border: none;
+
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+button:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 400; /* E o regular */
+    line-height: 18px;
+    letter-spacing: 0.2px;
+
+    color: #777;
+
+    transition: all 300ms;
+}
+
+footer a {
+    color: #25282B;
+    text-decoration: none;   
+    
+    transition: all 200ms;
+}
+
+footer a:hover {
+    font-weight: bold;
+    color: #ff5E84;
+
+    opacity: 0.7;
+}
+
+.ideia {
+    display: flex;
+
+    background-color: #FFF;
+
+    border-radius: 8px;
+
+    box-shadow: 0px 4px 16px -8px rgba(1, 1, 1, 0.1);
+
+    padding: 32px;
+
+    margin-bottom: 32px;
+}
+
+.ideia img {
+    width: 60px;
+    height: 60px;
+
+    margin-right: 32px;
+}
+
+.ideia h3 {
+    margin: 0;
+}
+
+.ideia p {
+    margin: 8px 0;
+
+    color: #777;
+}
+
+.ideia .description {
+    margin: 16px 0;
+}
+
+/* Modal */
+
+#modal {
+    background: #ff5E84;
+    
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    transition: all 300ms;
+
+    /* Existe essa maneira de fazer ele preecher a tela toda
+    width: 100vw;
+    */
+    height: 200vh;
+
+    display: flex;
+    justify-content: center;
+}
+
+#modal.addScroll {
+    overflow: auto;
+}
+
+#modal .content {
+    margin-top: 5%;
+
+    color: white;
+}
+
+#modal .content h1 {
+    text-align: center; 
+    
+    text-transform: uppercase;
+}
+
+#modal form {
+    width: 80%;
+    max-width: 800px;
+
+    margin: 0 auto 15%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.content form div:nth-child(3),
+.content form div:nth-child(4),
+.content form div:nth-child(5) {
+    grid-column: span 2; /* Ele vai espandir para 2 colunas */
+}
+
+form input,
+form textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    box-sizing: border-box;
+
+    border-radius: 6px;
+    border: 1px solid rgb(141, 25, 52, 0.5);
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition: 250ms cubic-bezier(.27,0,0,1);
+}
+
+form input:focus,
+form textarea:focus {
+    transform: scale(1.05);
+}
+
+form label {
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.8px;
+}
+
+form a {
+    width: 140px;
+    height: 40px;
+
+    background: #ffffff22;
+
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+
+    border-radius: 6px;
+
+    transition: all 200ms;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    align-self: end;    /* Esse daqui e do grid */
+}
+
+form a:hover {
+    background: #fff;
+    color: #ff5E84;
+
+    text-decoration: none;
+}
+
+form button {
+    background: #FFF;
+
+    width: 150px;
+    height: 40px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: all 200ms;
+
+    margin-top: 32px;
+
+    grid-column: 2;
+    justify-self: end;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #ff5E8477;
+
+}
+
+form button:hover {
+    background: #0984e3;
+    color: white;
+
+    text-decoration: none;
+}
+
+
+#modal.hide {
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-35px);
+}
+
+.animationTrue {
+    animation-name: positionIn;
+    animation-duration: 320ms;
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;
+    animation-timing-function: cubic-bezier(.27,0,0,1);
+}   
+
+@keyframes positionIn {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* IDEIAS.HTML */
+#page-ideias #container {
+    display: block;
+}
+
+#page-ideias header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#page-ideias nav {
+    display: flex;
+    align-items: center;
+
+}
+
+#page-ideias nav li {
+    list-style-type: none;
+
+    margin-right: 16px;
+}
+
+#page-ideias nav li a {
+    color: #25282B;
+}
+
+#page-ideias nav li a.button {
+    color: #FFF;
+}
+
+#page-ideias nav li:last-child {
+    margin: 0;
+}
+
+section#title {
+    text-align: center;
+}
+
+section#title p {
+    opacity: 0.7;
+    margin: 0;
+}
+
+section#title h1 {
+    margin: 0;
+
+    font-size: 28px;
+}
+
+section#ideias {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+section#ideias .ideia {
+    margin: 0;
+}
+
+section#title,
+section#ideias,
+footer {
+    margin-top: 64px;
+}
+
+#modal .error {
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-40px);
+
+    transition: 300ms;
+}
+
+#modal .show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0px);
+}
