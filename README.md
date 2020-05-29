@@ -43,10 +43,10 @@ npm dev
 
 👤 **Alexandre Costa**
 
-## 📝 License
-
 * Github: [@alexandredev3](https://github.com/alexandredev3)
 * Linkedin: [@alexandreCosta](https://www.linkedin.com/in/alexandre-costa-401699199/)
+
+## 📝 License
 
 Copyright © 2020 [Alexandre Costa](https://github.com/alexandredev3).<br />
 This project is [MIT](https://github.com/alexandredev3/casa-criativa/blob/master/LICENSE.txt) licensed.
